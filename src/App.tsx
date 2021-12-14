@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "components/Header";
 import Carousel from "components/Carousel";
 import Masonry from "components/Masonry";
@@ -14,6 +14,7 @@ function App() {
   const [slideTexts, setSlideTexts] = useState<any>({});
   const [slideImages, setSlideImages] = useState<Array<any>>([]);
   const [masonry, setMasonry] = useState<Array<any>>([]);
+  const [email, setEmail] = useState("");
 
   const fetchData = async () => {
     setLoading(true);
@@ -29,6 +30,24 @@ function App() {
       Date.parse(one.date) > Date.parse(two.date) ? -1 : 1
     );
     setMasonry(cards);
+    setLoading(false);
+  };
+
+  const fetchNewletterData = async (email: string) => {
+    setLoading(true);
+    const response = await fetch(API_URL, {
+      method: "POST",
+      body: JSON.stringify({ email: email }),
+    });
+
+    const jsonData = await response.json();
+
+    console.log(jsonData);
+
+    if (jsonData.success) {
+      alert("Email submission successful!");
+    }
+
     setLoading(false);
   };
 
@@ -50,6 +69,12 @@ function App() {
     return () => window.removeEventListener("resize", updateWindowDimensions);
   }, []);
 
+  useEffect(() => {
+    if (email !== "") {
+      fetchNewletterData(email);
+    }
+  }, [email]);
+
   return (
     <div className="App">
       {isLoading ? (
@@ -61,7 +86,7 @@ function App() {
           <Header />
           <Carousel text={slideTexts} images={slideImages} />
           <Masonry cards={masonry} width={imageWidth} />
-          <Footer />
+          <Footer onChangeEmail={setEmail} />
         </>
       )}
     </div>

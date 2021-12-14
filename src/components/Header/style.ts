@@ -14,6 +14,8 @@ export const Content = styled.div`
   @media (max-width: 480px) {
     padding: 0 2.5%;
   }
+  background: #ffffff;
+  z-index: 10;
 `;
 
 export const LogoImage = styled.img`
@@ -21,6 +23,10 @@ export const LogoImage = styled.img`
   @media (max-width: 480px) {
     width: 98px;
   }
+`;
+
+export const ListImage = styled.img`
+  width: 20px;
 `;
 
 export const LeftSubContent = styled.div`

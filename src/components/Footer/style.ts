@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface ColorProps {
+  color?: string;
+}
+
 export const Content = styled.div`
   width: 33%;
   @media (max-width: 1024px) {
@@ -22,11 +26,11 @@ export const FooterForm = styled.div`
   padding: 20px 0 50px 0;
 `;
 
-export const FooterInput = styled.input`
+export const FooterInput = styled.input<ColorProps>`
   height: 37px;
   width: 72.4%;
   font-size: 14px;
-  border: 1px solid #000;
+  border: 1px solid ${({ color }) => color || "#000"};
   :focus {
     outline: none;
   }

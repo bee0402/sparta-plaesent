@@ -29,8 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "deploy-to-git",
-    "build-my-app": "a-build-script"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -54,19 +54,7 @@
     "@types/react-slick": "^0.23.7",
     "@types/react-stack-grid": "^0.7.3",
     "@types/styled-components": "^5.1.18",
-    "deploy-to-git": "^0.1.5"
+    "gh-pages": "^3.2.3"
   },
-  "config": {
-    "deployToGit": {
-      "repository": "git@github.com:devJovanni/sparta-plaesent.git",
-      "branch": "deploy",
-      "folder": "build",
-      "script": "npm run build-my-app",
-      "commit": "Automatic commit text",
-      "user": {
-        "email": "dev@jovanni.services",
-        "name": "devJovanni"
-      }
-    }
-  }
+  "homepage": "http://devJovanni.github.io/sparta-plaesent"
 }
