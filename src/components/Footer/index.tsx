@@ -40,7 +40,7 @@ const Footer = ({ onChangeEmail }: IProps) => {
           placeholder="Email"
           value={email}
           onChange={(e) => onChange(e.target.value)}
-          color={isValidate ? "#fff" : "#FF0000"}
+          color={isValidate ? "#000" : "#FF0000"}
         />
         <FooterSubmit onClick={onSubmit}>Submit</FooterSubmit>
       </FooterForm>

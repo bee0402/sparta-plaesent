@@ -18,6 +18,7 @@ export const Content = styled.div`
 `;
 
 export const FooterTitle = styled.div`
+  font-family: ACaslonPro;
   font-size: 18px;
 `;
 

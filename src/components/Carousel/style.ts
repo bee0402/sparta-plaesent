@@ -36,6 +36,7 @@ export const TextSubContent = styled.div`
 `;
 
 export const TextOne = styled.div`
+  font-family: Springville;
   font-size: 60px;
   line-height: 60px;
   @media (max-width: 678px) {
@@ -49,6 +50,7 @@ export const TextOne = styled.div`
 `;
 
 export const TextTwo = styled.div`
+  font-family: ACaslonPro;
   font-size: 30px;
   line-height: 30px;
   margin: 2rem 0;
@@ -65,6 +67,7 @@ export const TextTwo = styled.div`
 `;
 
 export const TextThree = styled.div`
+  font-family: ACaslonPro;
   font-size: 18px;
   line-height: 24px;
   @media (max-width: 678px) {

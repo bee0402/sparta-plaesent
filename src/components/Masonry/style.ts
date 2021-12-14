@@ -22,6 +22,7 @@ export const CardDate = styled.div`
 `;
 
 export const CardTitle = styled.div`
+  font-family: Springville;
   font-size: 48px;
   @media (max-width: 1024px) {
     font-size: 36px;
@@ -37,6 +38,7 @@ export const CardTitle = styled.div`
 `;
 
 export const CardAuthor = styled.div`
+  font-family: ACaslonPro;
   font-size: 14px;
   color: #131313;
 `;
