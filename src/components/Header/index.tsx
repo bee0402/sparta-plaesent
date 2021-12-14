@@ -1,30 +1,28 @@
 import React from "react";
-import {
-  Content,
-  LeftSubContent,
-  RightSubContent,
-  LogoImage,
-  ListImage,
-  LogoText,
-} from "./style";
+import "./style.scss";
 import logo from "assets/images/Logo.png";
 import list from "assets/images/List.png";
 
 const Header = () => {
   return (
-    <Content>
-      <LeftSubContent>
-        <LogoImage src={logo} alt="responsive" loading="lazy" />
-      </LeftSubContent>
-      <RightSubContent />
-      <RightSubContent>
-        <LogoText>212.555.5555</LogoText>
-        <LogoText>Login</LogoText>
-        <LogoText>
-          <ListImage src={list} width={20} alt="responsive" />
-        </LogoText>
-      </RightSubContent>
-    </Content>
+    <div className="header-content">
+      <div className="left-subcontent">
+        <img
+          className="logo-image"
+          src={logo}
+          alt="responsive"
+          loading="lazy"
+        />
+      </div>
+      <div className="right-subcontent" />
+      <div className="right-subcontent">
+        <div className="logo-text">212.555.5555</div>
+        <div className="logo-text">Login</div>
+        <div className="logo-text">
+          <img className="list-image" src={list} width={20} alt="responsive" />
+        </div>
+      </div>
+    </div>
   );
 };
 

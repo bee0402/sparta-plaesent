@@ -1,27 +1,25 @@
-import styled from "styled-components";
-
-export const Content = styled.div`
+.masonry-content {
   margin: 3.75%;
-`;
+}
 
-export const CardContent = styled.div`
+.card-content {
   text-align: start;
   width: -webkit-fill-available;
   padding: 8.75%;
-`;
+}
 
-export const CardImage = styled.img`
+.card-image {
   display: flex;
   width: 100%;
-`;
+}
 
-export const CardDate = styled.div`
+.card-date {
   font-size: 11px;
   color: #767676;
   padding-top: 3vw;
-`;
+}
 
-export const CardTitle = styled.div`
+.card-title {
   font-family: Springville;
   font-size: 48px;
   @media (max-width: 1024px) {
@@ -35,10 +33,10 @@ export const CardTitle = styled.div`
   }
   color: #131313;
   padding: 1vw 0;
-`;
+}
 
-export const CardAuthor = styled.div`
+.card-author {
   font-family: ACaslonPro;
   font-size: 14px;
   color: #131313;
-`;
+}

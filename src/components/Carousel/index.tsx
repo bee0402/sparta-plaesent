@@ -2,16 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {
-  Content,
-  SlideImageContent,
-  SlideImage,
-  TextContent,
-  TextSubContent,
-  TextOne,
-  TextTwo,
-  TextThree,
-} from "./style";
+import "./style.scss";
 
 interface IProps {
   text: any;
@@ -32,22 +23,27 @@ const Carousel = ({ text, images }: IProps) => {
   };
 
   return (
-    <Content>
+    <div className="slide-content">
       <Slider {...settings}>
         {images.map((item, key) => (
-          <SlideImageContent key={key}>
-            <SlideImage src={item.image} alt={item.alt} loading="lazy" />
-          </SlideImageContent>
+          <div className="slide-image-content" key={key}>
+            <img
+              className="slide-image"
+              src={item.image}
+              alt={item.alt}
+              loading="lazy"
+            />
+          </div>
         ))}
       </Slider>
-      <TextContent>
-        <TextSubContent>
-          <TextOne>{text.title}</TextOne>
-          <TextTwo>{text.date}</TextTwo>
-          <TextThree>{text.subtitle}</TextThree>
-        </TextSubContent>
-      </TextContent>
-    </Content>
+      <div className="text-content">
+        <div className="text-subcontent">
+          <div className="text-one">{text.title}</div>
+          <div className="text-two">{text.date}</div>
+          <div className="text-three">{text.subtitle}</div>
+        </div>
+      </div>
+    </div>
   );
 };
 

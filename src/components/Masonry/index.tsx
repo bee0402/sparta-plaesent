@@ -1,14 +1,7 @@
 import React from "react";
 import sizeMe from "react-sizeme";
 import StackGrid from "react-stack-grid";
-import {
-  Content,
-  CardContent,
-  CardDate,
-  CardTitle,
-  CardImage,
-  CardAuthor,
-} from "./style";
+import "./style.scss";
 
 interface IProps {
   cards: Array<any>;
@@ -17,19 +10,19 @@ interface IProps {
 
 const Masonry = ({ cards, width }: IProps) => {
   return (
-    <Content>
+    <div className="masonry-content">
       <StackGrid columnWidth={width}>
         {cards &&
           cards.map((card, key) => (
-            <CardContent key={key}>
-              <CardImage src={card.image} alt="" />
-              <CardDate>{card.date}</CardDate>
-              <CardTitle>{card.title}</CardTitle>
-              <CardAuthor>Powed by {card.title}</CardAuthor>
-            </CardContent>
+            <div className="card-content" key={key}>
+              <img className="card-image" src={card.image} alt="" />
+              <div className="card-date">{card.date}</div>
+              <div className="card-title">{card.title}</div>
+              <div className="card-author">Powed by {card.title}</div>
+            </div>
           ))}
       </StackGrid>
-    </Content>
+    </div>
   );
 };
 
